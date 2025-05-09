@@ -172,3 +172,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+python-import_modules/variable_load_5.py
+.gitignore
