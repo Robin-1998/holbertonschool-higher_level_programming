@@ -6,4 +6,3 @@ if __name__ == "__main__":
         argument = int(sys.argv[i])
         result = result + argument
     print(result)
-
