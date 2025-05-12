@@ -175,3 +175,10 @@ cython_debug/
 python-import_modules/variable_load_5.py
 .gitignore
 python-data_structures/1-main.py
+python-data_structures/2-main.py
+python-data_structures/3-main.py
+python-data_structures/4-main.py
+python-data_structures/5-main.py
+python-data_structures/6-main.py
+python-data_structures/7-main.py
+python-data_structures/8-main.py
