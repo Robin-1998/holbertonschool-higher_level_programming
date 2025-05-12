@@ -13,6 +13,3 @@ Python - Data Structures: Lists, Tuples :
 10. Only by 2
 11. Delete at
 12. Switch
-
-# deuxième méthode de boucle pour la tâche 0
-# for integer in range(len(my_list)):
