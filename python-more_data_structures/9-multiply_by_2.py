@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# fonction qui retourne un nouveau dictionnaire avec les valeurs multiplié par 2
+# fonction qui retourne un nouveau dictionnaire avec
+# les valeurs multiplié par 2
 
 def multiply_by_2(a_dictionary):
     new_dictionnary = {}
