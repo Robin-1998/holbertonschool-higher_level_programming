@@ -1,3 +1,5 @@
 #!/usr/bin/python3
 def raise_exception_msg(message=""):
-    raise message("C is fun")
+    raise NameError(message)
+
+# On lève l'exception de la variable message à l'aide de NameError
