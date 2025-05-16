@@ -7,6 +7,9 @@ Fonction qui imprime my name is premier_nom et deuxième_nom
 
 
 def say_my_name(first_name, last_name=""):
+    """
+        Write a function that prints My name is <first_na> <last_na>
+    """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
