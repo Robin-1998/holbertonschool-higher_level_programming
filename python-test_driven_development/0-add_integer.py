@@ -3,8 +3,6 @@ Write a function that adds 2 integers.
 
 
 """
-
-
 def add_integer(a, b=98):
     """Write a function that adds 2 integers.
 
