@@ -1,0 +1,25 @@
+>>> module = __import__("4-print_square")
+>>> module.print_square(0)
+
+>>> module.print_square(1)
+#
+>>> module.print_square(2)
+##
+##
+>>> module.print_square(3)
+###
+###
+###
+>>> module.print_square(4)
+####
+####
+####
+####
+>>> module.print_square(-1)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+>>> module.print_square("3")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
