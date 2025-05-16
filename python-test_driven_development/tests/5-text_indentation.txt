@@ -1,0 +1,27 @@
+>>> module = __import__("5-text_indentation")
+>>> module.text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere?")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Quonam modo?
+
+Utrum igitur tibi litteram videor an totas paginas commovere?
+
+>>> module.text_indentation("Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud:")
+Non autem hoc:
+
+igitur ne illud quidem.
+
+Fortasse id optimum, sed ubi illud:
+
+>>> module.text_indentation(42)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> module.text_indentation(4.2)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> module.text_indentation([], [])
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
