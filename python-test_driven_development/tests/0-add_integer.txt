@@ -19,7 +19,5 @@ TypeError: a must be an integer
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
->>> module.add_integer("bad", 3)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
+>>> module.add_integer(True, 2)
+3
