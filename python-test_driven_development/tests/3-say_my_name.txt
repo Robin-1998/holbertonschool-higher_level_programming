@@ -1,0 +1,13 @@
+>>> module = __import__("3-say_my_name")
+>>> module.say_my_name(12, "White")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+>>> module.say_my_name("White", 12)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+>>> module.say_my_name("Walter")
+My name is Walter 
+>>> module.say_my_name("", "")
+My name is  
