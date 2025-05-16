@@ -11,3 +11,11 @@ TypeError: last_name must be a string
 My name is Walter 
 >>> module.say_my_name("", "")
 My name is  
+>>> module.say_my_name("White", 1.2)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+>>> module.say_my_name(True, 0)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
