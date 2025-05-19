@@ -10,4 +10,7 @@ class Square:
     """
         on définit le carré dans la class Square
     """
-    Square = "{}"
+    pass
+
+# Pour qu'une classe soit correctement vide, on utilise le mot-clé pass.
+
