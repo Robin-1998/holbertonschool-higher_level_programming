@@ -64,4 +64,4 @@ class Rectangle:
 # dans le return on boucle avec for pour fabriquer toutes les lignes
 # du rectangle
 # la ligne \n .join permet de coller les lignes avec des sauts de lignes
-# donc dans le return, on répèe 
+# donc dans le return, on répèe
