@@ -55,6 +55,17 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width + self.__height) * 2
+    
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """ On renvoie le plus grand rectangle en fonction de la surface"""
+        if not isinstance(rect_1, Rectangle):
+            TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
 
     def __str__(self):
         """On répète la ligne de # autant de fois que la hauteur e"""
@@ -69,14 +80,3 @@ class Rectangle:
     def __del__(self):
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """ On renvoie le plus grand rectangle en fonction de la surface"""
-        if not isinstance(rect_1, Rectangle):
-            TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
-            TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() > rect_2.area():
-            return rect_2
-        return rect_1
