@@ -9,7 +9,7 @@ de la classe spécifiée ; sinon False
 
 
 def inherits_from(obj, a_class):
-    """ on retourne un test ; si un  objet est une instance d’une 
+    """ on retourne un test ; si un objet est une instance d’une 
     sous-classe d’une classe donnée, tout en excluant les instances 
     directes de cette classe.
     """
