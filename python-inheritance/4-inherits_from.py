@@ -1,18 +1,12 @@
 #!/usr/bin/python3
 """
-Method module
+Projet Holberton
+ROBIN D
+fonction qui renvoie True si l'objet est exactement une instance
+de la classe spécifiée ; sinon False
 """
 
 
-def inherits_from(obj, a_class):
-    """check if object is an instance of a class
-    args:
-        obj: object to check
-        a_class: class to check
-    returns:
-        True or False
-    """
-
-    if type(obj) == a_class:
-        return False
-    return issubclass(type(obj), a_class)
+def is_kind_of_class(obj, a_class):
+    """ on retourne la classe spécifié qui est une instance"""
+    return isinstance(obj, a_class) and type(obj) is not a_class
