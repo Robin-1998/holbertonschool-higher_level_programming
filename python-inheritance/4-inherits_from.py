@@ -3,7 +3,7 @@
 Projet Holberton
 ROBIN D
 fonction qui renvoie True si l'objet est une instance d'une class qui a 
-hérité(directement ou indirectement) de la classe spécifiée ; sinon False
+hérité(directement ou indirectement) de la classe spécifiée sinon False
 """
 
 
