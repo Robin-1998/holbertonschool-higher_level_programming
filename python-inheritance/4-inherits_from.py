@@ -7,6 +7,6 @@ de la classe spécifiée ; sinon False
 """
 
 
-def is_kind_of_class(obj, a_class):
+def inherits_from(obj, a_class):
     """ on retourne la classe spécifié qui est une instance"""
     return isinstance(obj, a_class) and type(obj) is not a_class
