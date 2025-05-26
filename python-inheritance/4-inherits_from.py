@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """
-Projet Holberton
-ROBIN D
-fonction qui renvoie True si l'objet est une instance d'une class qui a 
-hérité(directement ou indirectement) de la classe spécifiée sinon False
+if the object is an instance of a class that inherited (directly or indirectly) 
 """
 
 
