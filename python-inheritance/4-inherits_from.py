@@ -8,5 +8,15 @@ hérité(directement ou indirectement) de la classe spécifiée sinon False
 
 
 def inherits_from(obj, a_class):
-    """ si un objet est une instance d’une sous-classe d’une classe donnée"""
+    """
+    Return True if the object is an instance of a subclass (direct or indirect)
+    of the specified class. Return False otherwise.
+
+    Args:
+        obj: The object to check.
+        a_class: The class to compare against.
+
+    Returns:
+        True 
+    """
     return isinstance(obj, a_class) and type(obj) is not a_class
