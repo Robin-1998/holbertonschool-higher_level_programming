@@ -3,8 +3,6 @@
 Projet Holberton
 ROBIN D
 Class My_list qui hérite de list
-
-
 """
 
 
