@@ -8,5 +8,6 @@ Classe BaseGeometry
 
 class BaseGeometry:
     """Classe vide"""
-    def area(self): 
-        raise Exception ("area() is not implemented")
+
+    def area(self):
+        raise Exception("area() is not implemented")
