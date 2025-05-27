@@ -5,5 +5,7 @@ ROBIN D
 Classe vide
 """
 
+
 class BaseGeometry:
+    """Classe vide"""
     pass
