@@ -2,7 +2,7 @@
 """
 Projet Holberton
 ROBIN D
-Une classe abstraite : Animal
+Une classe abstraite : Shape
 """
 from abc import ABC, abstractmethod
 import math
@@ -14,6 +14,7 @@ class Shape(ABC):
     def area(self):
         pass
 
+    @abstractmethod
     def perimeter(self):
         pass
 
@@ -46,5 +47,8 @@ class Rectangle(Shape):
 
 
 def shape_info(shape):
-    print("Area", shape.area())
-    print("Perimeter", shape.perimeter())
+    """ fonction qui retourne l'aire du rectangle et cercle ainsi que
+        le périmètre
+    """
+    print("Area:", shape.area())
+    print("Perimeter:", shape.perimeter())
