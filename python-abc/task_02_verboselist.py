@@ -2,7 +2,7 @@
 """
 Projet Holberton
 ROBIN D
-Une classe abstraite : Shape
+Une classe VerboseList
 """
 
 
