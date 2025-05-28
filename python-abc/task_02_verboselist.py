@@ -28,6 +28,9 @@ class VerboseList(list):
         """ method qui supprime l'élément à la position spécifiée """
         boromir = super().pop(item)
         print(f"Popped [{boromir}] from the list.")
+        return boromir
 
 # on utilise -1 car on appelle sans argument, exemple pop(), ça enlève
 # le dernier élément et si tu appels pop(0), ça enlève le premier, etc
+# Sans return, ta méthode pop fera bien son travail (retirer un élément), 
+# mais elle ne donnera pas l’élément supprimé à qui l’appelle.
