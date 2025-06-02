@@ -11,5 +11,4 @@ def read_file(filename=""):
     with open('my_file_o.txt', encoding="utf-8") as f:
         filename = f.read()
 
-    f.closed
-True
+    return filename
