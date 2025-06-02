@@ -8,7 +8,5 @@ fonction qui lit un fichier texte et l'imprime sur stdout
 
 def read_file(filename=""):
     """ fonction lecture de fichier """
-    with open('my_file_o.txt', encoding="utf-8") as f:
-        filename = f.read()
-
-    print(filename, end="")
+    with open(filename, encoding="utf-8") as f:
+        print(f.read(), end="")
