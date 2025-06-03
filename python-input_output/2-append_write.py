@@ -2,8 +2,8 @@
 """
 Projet Holberton
 ROBIN D
-fonction qui ajoute une chaîne de caractères à la fun d'un fichier texte 
-(UTF8) et renvoie le nombre de caractères ajoutés:
+fonction qui ajoute une chaîne de caracteres a la fin d'un fichier texte
+et renvoie le nombre de caracteres ajoutés:
 """
 
 
