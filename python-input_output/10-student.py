@@ -2,12 +2,12 @@
 """
 Projet Holberton
 ROBIN D
-Class student qui définit un étudiant avec 
+Class student qui définit un étudiant avec
 """
 
 
 class Student:
-
+    """ class étudiant """
     def __init__(self, first_name, last_name, age):
         """ constructeur de la class student """
 
