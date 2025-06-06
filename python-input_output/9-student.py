@@ -2,7 +2,7 @@
 """
 Projet Holberton
 ROBIN D
-Class student
+Class student qui contient un constructeur et une public method
 """
 
 
@@ -15,6 +15,5 @@ class Student:
         self.age = age
 
     def to_json(self):
-        """ public method qui récupère une représentation du 
-        dictionnaire d'une instance d'étudiant """
+        """ récupère une représentation du dict d'une instance d'étudiant """
         return self.__dict__
