@@ -10,4 +10,7 @@ sérialisation JSON d'un objet :
 
 def class_to_json(obj):
     """ on retourne la description du dictionnaire """
-    return obj
+    return obj.__dict__
+
+# c'est un attribut spécial contenant un dictionnaire des
+# attributs d'instance de l'objet
