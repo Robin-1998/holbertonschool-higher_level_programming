@@ -9,9 +9,10 @@ PORT = 8000
 
 class server(http.server.BaseHTTPRequestHandler):
     """ Class server qui comprend les conditions suivant le path rencontré """
+
     def do_GET(self):
         if self.path == "/data":
-# on gère le cas dans la méthode ou le serveur fonctionne
+            # on gère le cas dans la méthode ou le serveur fonctionne
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
@@ -32,7 +33,8 @@ class server(http.server.BaseHTTPRequestHandler):
 
         elif self.path == "/info":
             self.send_response(200)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Type",
+                             "application/json; charset=utf-8")
             self.end_headers()
             data_info = {"version": "1.0",
                          "description": "A simple API built with http.server"}
@@ -44,7 +46,7 @@ class server(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write("OK".encode('utf-8'))
 
-        elif self.path != "/status":
+        else:
             self.send_response(404)
             self.send_header("Content-Type", "text/plain; charset=utf-8")
             self.end_headers()
@@ -68,7 +70,7 @@ Handler = server
 # dans le with, le fait de rajouter une chaîne vide signifie que le serveur
 # écoutera sur n'importe quelle inferface réseau (toutes les adresses IP)
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print("serving as port", PORT)
+    print(f"Serving on port {PORT}")
     httpd.serve_forever()
 # server_forever est une méthode sur l'instance TCPserver qui permet
 # tout simplement de démarrer le serveur
