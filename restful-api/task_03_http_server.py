@@ -13,7 +13,7 @@ class server(http.server.BaseHTTPRequestHandler):
         if self.path == "/data":
 # on gère le cas dans la méthode ou le serveur fonctionne
             self.send_response(200)
-            self.send_header("Content-Type", "application/john; charset=utf-8")
+            self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
             dataset = {"name": "John", "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(dataset).encode('utf-8'))
@@ -32,7 +32,7 @@ class server(http.server.BaseHTTPRequestHandler):
 
         elif self.path == "/info":
             self.send_response(200)
-            self.send_header("Content-Type", "application/john; charset=utf-8")
+            self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
             data_info = {"version": "1.0",
                          "description": "A simple API built with http.server"}
