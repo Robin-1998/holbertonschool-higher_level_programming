@@ -21,6 +21,20 @@ class server(http.server.BaseHTTPRequestHandler):
             
             self.wfile.write(json.dumps(dataset).encode('utf-8'))
 
+        elif self.path == "/status":
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write("OK".encode('utf-8'))
+
+        elif self.path == "/info":
+            data_info = {"version": "1.0",
+                         "description": "A simple API built with http.server"}
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(json.dumps(data_info).encode('utf-8'))
+
         elif self.path == "/":
             self.send_response(200)
             self.send_header("Content-Type", "text/plain")
@@ -33,27 +47,12 @@ class server(http.server.BaseHTTPRequestHandler):
             # C'est une sorte de lien qui fait la passation de la réponse
             # du serveur au client pour qu'il puisse voir le message
 
-        elif self.path == "/info":
-            data_info = {"version": "1.0",
-                         "description": "A simple API built with http.server"}
-            self.send_response(200)
-            self.send_header("Content-Type", "text/plain")
-            self.end_headers()
-            self.wfile.write(json.dumps(data_info).encode('utf-8'))
-
-        elif self.path == "/status":
-            self.send_response(200)
-            self.send_header("Content-Type", "text/plain")
-            self.end_headers()
-            self.wfile.write("OK".encode('utf-8'))
-
         # Utilisation d'un 'else' pour attraper toutes les autres routes
         else:
             self.send_response(404)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            self.wfile.write(
-                "404 Not Found - Endpoint not found.".encode('utf-8'))
+            self.wfile.write("Endpoint not found".encode('utf-8'))
 
 # Si on ne met pas toutes ces informations, l'utilisateur ne pourra pas voir sa
 # réponse et il faut aussi respecter la structure (statut + entêtes + corps)
