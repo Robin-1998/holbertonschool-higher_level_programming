@@ -29,3 +29,14 @@ class Student:
 # Pour chaque élément attr dans la liste attrs, si l'objet self a un
 # attribut nommé attr, alors ajoute dans un nouveau dictionnaire :
 # la clé = attr et la valeur = la valeur de cet attribut.
+
+
+# ou ce code 
+    def to_json(self, attrs=None):
+        if attrs is None:
+            return self.__dict__
+        new_dictionary = {}
+        for key, value in self.__dict__.items():
+            if key in attrs:
+                new_dictionary[key] = value
+        return new_dictionary
