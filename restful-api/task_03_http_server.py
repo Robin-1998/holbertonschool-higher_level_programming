@@ -13,16 +13,17 @@ class server(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/data":
             # On gère le cas où le serveur fonctionne
+            dataset = {"name": "John", "age": 30, "city": "New York"}
             self.send_response(200)
             # Utiliser application/json pour les données JSON
-            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Type", "application/json")
             self.end_headers()
-            dataset = {"name": "John", "age": 30, "city": "New York"}
+            
             self.wfile.write(json.dumps(dataset).encode('utf-8'))
 
         elif self.path == "/":
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Type", "text/plain")
             # Sans ce code le client ne saura comment lire la réponse (mauvais
             # affichage), là où lui donne un texte encodé en UTF-8
             self.end_headers()
@@ -33,24 +34,23 @@ class server(http.server.BaseHTTPRequestHandler):
             # du serveur au client pour qu'il puisse voir le message
 
         elif self.path == "/info":
-            self.send_response(200)
-            self.send_header("Content-Type",
-                             "application/json; charset=utf-8")
-            self.end_headers()
             data_info = {"version": "1.0",
                          "description": "A simple API built with http.server"}
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
             self.wfile.write(json.dumps(data_info).encode('utf-8'))
 
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Type", "text/plain")
             self.end_headers()
             self.wfile.write("OK".encode('utf-8'))
 
         # Utilisation d'un 'else' pour attraper toutes les autres routes
         else:
             self.send_response(404)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Type", "text/plain")
             self.end_headers()
             self.wfile.write(
                 "404 Not Found - Endpoint not found.".encode('utf-8'))
@@ -68,12 +68,12 @@ class server(http.server.BaseHTTPRequestHandler):
 # page HTML, un fichier JSON, du texte BRUT, une image et bien d'autres
 
 
-Handler = server
 
+if __name__ == "__main__":
 # Dans le 'with', le fait de rajouter une chaîne vide signifie que le serveur
 # écoutera sur n'importe quelle interface réseau (toutes les adresses IP)
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print(f"Serving on port {PORT}")
-    httpd.serve_forever()
-    # server_forever est une méthode sur l'instance TCPserver qui permet
-    # tout simplement de démarrer le serveur
+    with socketserver.TCPServer(("", PORT), server) as httpd:
+        print(f"Serving on port {PORT}")
+        httpd.serve_forever()
+        # server_forever est une méthode sur l'instance TCPserver qui permet
+        # tout simplement de démarrer le serveur
