@@ -11,3 +11,5 @@ def append_write(filename="", text=""):
     """ imprime le nombre de caractère dans la chaîne de caractère """
     with open(filename, 'a', encoding="utf-8") as f:
         return (f.write(text))
+
+        
