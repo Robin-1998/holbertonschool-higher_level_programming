@@ -73,7 +73,7 @@ Handler = server
 # Dans le 'with', le fait de rajouter une chaîne vide signifie que le serveur
 # écoutera sur n'importe quelle interface réseau (toutes les adresses IP)
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print("Serving as port ", PORT)
+    print(f"Serving on port {PORT}")
     httpd.serve_forever()
     # server_forever est une méthode sur l'instance TCPserver qui permet
     # tout simplement de démarrer le serveur
