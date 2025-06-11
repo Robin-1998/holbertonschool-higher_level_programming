@@ -5,13 +5,7 @@ from flask import Flask, jsonify, request
 # on créé une instance flask
 app = Flask(__name__)
 
-users = {
-    "jane": {
-        "name": "Jane",
-        "age": 28,
-        "city": "Los Angeles"
-    }
-}
+users = {}
 
 
 # define a route and a view function
@@ -50,22 +44,11 @@ def data_username(username):
 @app.route('/add_user', methods=['POST'])
 def adding_users():
     data = request.get_json()
-
-    required = ["username", "name", "age", "city"]
-    for field in required:
-        if field not in data:
-            return jsonify({"error": f"{field} is required"}), 400
-
-    username = data["username"]
-
-    users[username] = {
-        "username": username,
-        "name": data["name"],
-        "age": data["age"],
-        "city": data["city"]
-    }
-
-    return jsonify({"message": "User added", "user": {username: users[username]}}), 201
+    username = data.get("username")
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
+    users[username] = data
+    return jsonify({"message": "User added", "user": data}), 201
 
 
 if __name__ == "__main__":
