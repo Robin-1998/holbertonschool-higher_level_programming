@@ -66,13 +66,13 @@ class server(http.server.BaseHTTPRequestHandler):
 # CORPS : c'est le contenu que reçoit le client. Par exemple si c'est une
 # page HTML, un fichier JSON, du texte BRUT, une image et bien d'autres
 
-
-
 if __name__ == "__main__":
 # Dans le 'with', le fait de rajouter une chaîne vide signifie que le serveur
 # écoutera sur n'importe quelle interface réseau (toutes les adresses IP)
     with socketserver.TCPServer(("", PORT), server) as httpd:
-        print(f"Serving on port {PORT}")
+        print("Serving on port", PORT)
         httpd.serve_forever()
         # server_forever est une méthode sur l'instance TCPserver qui permet
         # tout simplement de démarrer le serveur
+
+
