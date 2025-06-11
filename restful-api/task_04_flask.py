@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 users = {}
 
-
 # define a route and a view function
 @app.route('/')
 def home():
@@ -41,7 +40,7 @@ def data_username(username):
 # define a route avec ajout d'un nouvel utilisateur
 
 
-@app.route('/add_user', methods=['GET', 'POST'])
+@app.route('/add_user', methods=['POST'])
 def adding_users():
     data = request.get_json()
     username = data.get("username")
