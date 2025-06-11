@@ -41,7 +41,7 @@ def data_username(username):
 # define a route avec ajout d'un nouvel utilisateur
 
 
-@app.route('/add_user', methods=['POST'])
+@app.route('/add_user', methods=['GET', 'POST'])
 def adding_users():
     data = request.get_json()
     username = data.get("username")
