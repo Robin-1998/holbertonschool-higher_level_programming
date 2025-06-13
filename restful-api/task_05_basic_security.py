@@ -8,23 +8,22 @@ from flask_jwt_extended import (JWTManager, create_access_token,
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'key'
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
 
 users = {
-    "user1": {"username": "user1", "password": generate_password_hash("password"), "role": "user"},
-    "admin1": {"username": "admin1", "password": generate_password_hash("password"), "role": "admin"}
+    "user1": {
+        "username": "user1",
+        "password": generate_password_hash("password"),
+        "role": "user"
+    },
+    "admin1": {
+        "username": "admin1",
+        "password": generate_password_hash("password"),
+        "role": "admin"
+    }
 }
-
-payload = {
-    'username': 'user1',
-    'password': 'password'
-}
-
-# hashing password
-hashed_pw = generate_password_hash("mdp")
-print(hashed_pw)
-
 
 @auth.verify_password
 def verify_password(username, password):
@@ -36,12 +35,14 @@ def verify_password(username, password):
 
 @app.route('/login', methods=['POST'])
 def login():
-
+    data = request.get_json()
+    username = data.get('username')
+    return (username) 
 
 @app.route('/basic-protected', methods=['GET'])
 @auth.login_required
 def route_proteger():
-    return ("Basic Auth: Access Granted".format(auth.current_user))
+    return ("Basic Auth: Access Granted")
 # la formet avec le suite de code est utilisé pour l'authentification
 # notamment si tu utilises un module comme Flask-HTTPAuth
 
@@ -53,6 +54,7 @@ def jwt_protected():
 
 
 @app.route('/admin-only', methods=['GET'])
+@jwt_required()
 def admin():
     current_user = get_jwt_identity()
     if current_user['role'] != 'admin':
