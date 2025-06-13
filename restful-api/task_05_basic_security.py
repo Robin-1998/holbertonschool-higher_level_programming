@@ -45,8 +45,10 @@ def route_proteger():
 def login():
     data = request.get_json()
     username = data.get('username')
-    return (username)
 
+    user = users.get(username)
+    access_token = create_access_token(identity={"username": username, "role": user["role"]})
+    return jsonify(access_token=access_token), 200
 
 @app.route('/jwt-protected', methods=['GET'])
 @auth.login_required
