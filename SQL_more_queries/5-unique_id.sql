@@ -4,3 +4,4 @@ CREATE TABLE IF NOT EXISTS unique_id(
 	name VARCHAR(256),
 	UNIQUE (id)
 )
+-- En SQL, la contrainte UNIQUE (ou UNIQUE constraint) sert à garantir que toutes les valeurs d'une colonne (ou d’un groupe de colonnes) sont uniques, c’est-à-dire sans doublons.
