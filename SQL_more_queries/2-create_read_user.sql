@@ -1,5 +1,5 @@
 -- Script qui créé une base de donnée hbtn_0d_2 et un utilisateur user_0d_2
 CREATE DATABASE IF NOT EXISTS hbtn_0d_2;
-CREATE TABLE IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
+CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
 GRANT SELECT ON hbtn_0d_2.* TO 'user_0d_2'@'localhost';
 FLUSH PRIVILEGES;
