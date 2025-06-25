@@ -283,3 +283,5 @@ restful-api/posts.csv
 restful-api/test.py
 .vscode/settings.json
 .gitignore
+SQL_more_queries/text
+SQL_more_queries/my.cnf
