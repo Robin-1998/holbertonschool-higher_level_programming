@@ -7,6 +7,6 @@ CREATE TABLE IF NOT EXISTS cities(
 	name VARCHAR(256) NOT NULL,
 	UNIQUE (id),
 	PRIMARY KEY (id)
-	FOREIGN KEY (state_id) REFERENCES id(states)
+	FOREIGN KEY (state_id) REFERENCES states(id)
 )
 -- La FOREIGN KEYcontrainte est une clé utilisée pour lier deux tables ensemble.
