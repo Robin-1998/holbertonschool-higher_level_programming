@@ -1,10 +1,11 @@
 -- Sript qui liste tous les genre de hbtn_0d_tvshows et affiche le nombre de spectacles (shows) liés à chacun d'eux
 -- Script sans alias de table
-SELECT tv_genres.name AS genre, COUNT(*) AS tv_shows
+SELECT tv_genres.name AS genre, COUNT(*) AS number_of_shows
+-- number_of_shows est un nom personnalisé demander dans l'exercice, cela ne créé pas une nouvelle colonne dans la table
 FROM tv_show_genres
 JOIN tv_genres ON tv_show_genres.genre_id = tv_genres.id
 GROUP BY tv_genres.name
-ORDER BY tv_shows DESC;
+ORDER BY number_of_shows DESC;
 
 -- Script avec les alias de table
 -- SELECT film.name AS genre, COUNT(*) AS tv_shows
