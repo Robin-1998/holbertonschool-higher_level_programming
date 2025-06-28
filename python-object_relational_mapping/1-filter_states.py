@@ -29,6 +29,6 @@ if __name__ == "__main__":
 # Fetchall va réucpérer de son côté tout les colonnes qui correspondent
 
     for colonne in colonnes:
-        print(colonnes)
+        print(colonne)
 
 
