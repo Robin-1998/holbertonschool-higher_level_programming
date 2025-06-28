@@ -14,13 +14,12 @@ if __name__ == "__main__":
             port=3306,
             user=sys.argv[1],
             passwd=sys.argv[2],
-            db=sys.argv[3]
         )
 
     cur = database.cursor()
 
     cur.execute("SELECT * FROM states WHERE BINARY name = '{}'"
-                .format(sys.argv[4]))
+                .format(sys.argv[3]))
     # Affichage  ligne par ligne
     for state in cur.fetchall():
         print(state)
