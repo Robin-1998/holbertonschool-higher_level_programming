@@ -48,5 +48,5 @@ if __name__ == "__main__":
 # cur.fetchone() récupère la ligne suivante du résultat sous forme de tuple,
 # ici (id, nom_de_l'état)
 
-        print(cur.fetchone())  # Affiche la ligne récupérée
-
+        print(cur.fetchone())
+# Affiche la ligne récupérée
