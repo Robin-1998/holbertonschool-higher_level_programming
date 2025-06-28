@@ -7,7 +7,8 @@ Script qui liste tout les états de la database hbtn_0e_0_usa
 # Importation du module MySQLdb pour interagir avec une base MySQL
 import MySQLdb
 from sys import argv
-# Importation de argv pour récupérer les arguments passés en ligne de commande
+# Importation de argv pour récupérer les arguments passés en 
+# ligne de commande
 
 if __name__ == "__main__":
 # Cette condition vérifie que le script est exécuté directement 
@@ -40,7 +41,8 @@ if __name__ == "__main__":
     num_rows = cur.execute("SELECT * FROM states ORDER BY states.id")
 # cur.execute() renvoie le nombre de lignes retournées par la requête
 
-# On parcourt toutes les lignes obtenues, une par une, grâce au nombre de lignes
+# On parcourt toutes les lignes obtenues, une par une, grâce au 
+# nombre de lignes
     for i in range(num_rows):
 
 # cur.fetchone() récupère la ligne suivante du résultat sous forme de tuple,
