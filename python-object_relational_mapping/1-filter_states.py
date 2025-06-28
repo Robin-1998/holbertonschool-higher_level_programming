@@ -22,13 +22,8 @@ if __name__ == "__main__":
     cur.execute(
         "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id"
     )
-# WHERE name LIKE 'N%' va garder que les noms d'états qui commencent par N
-# on peut quand même continuer en y rajoutant le trie par identifiant
-    colonnes = cur.fetchall()
 
-# Fetchall va réucpérer de son côté tout les colonnes qui correspondent
+    colonnes = cur.fetchall()
 
     for colonne in colonnes:
         print(colonne)
-
-
