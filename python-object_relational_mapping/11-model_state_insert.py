@@ -27,7 +27,7 @@ if __name__ == "__main__":
     session.add(State_louisiana)
 
 # Validation de la transaction : envoie l'objet dans la base et crée la ligne
-# À ce moment-là, SQLAlchemy génère automatiquement un ID (auto-incrémenté)    
+# À ce moment-là, SQLAlchemy génère automatiquement un ID (auto-incrémenté)
     session.commit()
 
     # Affichage de l'ID de l'état ajouté
