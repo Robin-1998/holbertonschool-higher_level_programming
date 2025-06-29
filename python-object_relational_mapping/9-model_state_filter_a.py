@@ -24,7 +24,6 @@ if __name__ == "__main__":
         .order_by(State.id)
     )
 
-
     # Affichage
     for state in states_with_a:
         print(f"{state.id}: {state.name}")
