@@ -285,3 +285,16 @@ restful-api/test.py
 .gitignore
 SQL_more_queries/text
 SQL_more_queries/my.cnf
+SQL_more_queries/hbtn_0d_tvshows.sql
+python-object_relational_mapping/test_mysql.py
+.gitignore
+python-object_relational_mapping/4-cities_by_state.sql
+python-object_relational_mapping/6-model_state.py
+python-object_relational_mapping/cat 6-model_state.sql
+python-object_relational_mapping/6-model_state.sql
+python-object_relational_mapping/7-model_state_fetch_all.sql
+.gitignore
+javascript-warm_up/package.json
+javascript-warm_up/package-lock.json
+node_modules/
+javascript-warm_up/.babelrc
