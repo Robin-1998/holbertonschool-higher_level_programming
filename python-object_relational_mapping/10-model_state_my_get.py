@@ -7,7 +7,7 @@ Script qui affiche les états (objets) avec le nom passé en argument
 
 import sys
 from sqlalchemy import create_engine
-from model_state import State
+from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
@@ -18,9 +18,14 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_name = sys.argv[4]
+    # Création d'une nouvelle instance de State
+    new_state = State(name="Louisiana")
 
-    # Requête sécurisée : filtre exact sur le nom
-    state = session.query(State).filter(State.name == state_name).first()
+    # Ajout dans la session
+    session.add(new_state)
 
-    print(state.id)
+    # Validation dans la base
+    session.commit()
+
+    # Affichage de l'ID de l'état ajouté
+    print(new_state.id)
