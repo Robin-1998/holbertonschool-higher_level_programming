@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Items List</title>
+</head>
+<body>
+<!-- ouverture de la condition -->
+	{% if items %}
+		<ul>
+			{% for item in items %}
+<!-- si l'items est présent on le boucle -->
+			<li>{{ item }}</li>
+<!-- chaque item est affiché dans une balise liste -->
+			{% endfor %}
+<!-- on met fin à notre boucle -->
+		</ul>
+	{% else %}
+<!-- sinon on retourne -->
+		<p>No items found.</p>
+	{% endif %}
+<!-- fin de la condition -->
+</body>
+</html>
