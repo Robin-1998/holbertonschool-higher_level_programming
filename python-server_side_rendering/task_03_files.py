@@ -75,7 +75,7 @@ def afficher_produits():
         # Si la source est invalide, affiche un message d'erreur
         return render_template(
             'product_display.html',
-            error="Source invalide. Choisissez 'json' ou 'csv'.",
+            error="Wrong source'.",
             products=[]
         )
 
@@ -87,7 +87,7 @@ def afficher_produits():
         if not produits:
             return render_template(
                 'product_display.html',
-                error="Produit non trouvé.",
+                error="Product not found",
                 products=[]
             )
 
